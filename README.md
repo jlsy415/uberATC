@@ -5,7 +5,7 @@ Data Visualization for UberATC data
 
 Given that there are a lot of data points, 5,000 points were randomly selected out of all points within the allowed dataset for the sake of cleaner clustering UI. This loses some data, but allows for more workable data and friendly UI from the clustering. 
 
-The data points are first cleaned in R (code included) and then converted to GeoJSON via an online csv-to-geojson converter. They were then displayed on a map.
+The data points are first cleaned in R and then converted to GeoJSON via an online csv-to-geojson converter. They were then displayed on a map.
 
 Google Maps was the web API of choice. Though Leaflet and Google Maps are two of the best map APIs with well-developed libraries for heat maps and clustering, Google Maps API guarentees that maps will load quickly, given Google's infrastructure. It is also easier to use and has support for many of the features to be implemented. Notably, the Google Maps API has a poly.containsLocation() method that allows for combining drawing with filtering, a feature that is still not very well supported with current Leaflet plug-ins. The tradeoff is that Leaflet is a considerably smaller package, which makes it more mobile-friendly compared to Google Maps.
 
