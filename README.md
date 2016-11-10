@@ -12,7 +12,7 @@ Google Maps was the web API of choice. Though Leaflet and Google Maps are two of
 Google Maps drawing manager was used to allow for drawing of multiple polygons on the map. Google Maps Marker Clusterer was used to cluster the 5,000 points. Drawn polygons filter the marker cluster display to just points within the polygon.
 
 #Next Steps
-Given more time, a heatmap would have been implemented with Google Maps' visualization library. In addition, the drawn polygons would have been made to be editable (sides and endpoints be made modified, with the filtered marker clusters responding to the changing polygon). A map container not taking up the whole page would be used, and a display panel would be used to display useful statistical information about the points. 
+Given more time, the drawn polygons would have been made to be editable (sides and endpoints be made modified, with the filtered marker clusters responding to the changing polygon). A map container not taking up the whole page would be used, and a display panel would be used to display useful statistical information about the points. 
 
 A bigger overhaul of the app would mean to represent pairs of points as an line geometry in geojson, and having lines in geojson can allow for features such as most popular route, filtering routes by drawn shape, etc. To consider for the fact that cars have to abide by roads and that paths are rarely directly heading towards each other, the Google Maps Directions API, specifically the Waypoints, would have to be used to derive the distance and path of the car ride.
 
