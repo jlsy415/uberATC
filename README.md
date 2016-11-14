@@ -5,6 +5,10 @@ Visit https://andytsai08.github.io/uberATC/ for the app.
 
 Data Visualization for Uber pickup location data for UberATC. Use the drawing manager on the top center of the page to draw arbitrary shapes on the map, and marker clusters and the heatmap will be filtered accordingly. Drawn polygons can be deleted, and the heat map can be toggled, using the control buttons at the bottom of the page. 
 
+#Features
+
+Apart from allowing for filtering of data given arbitrarily drawn shapes, the app also allows users to edit and delete polygson shapes, and have data be updated accordingly so. Overlapping of polygons will be treated as just one big polygon, and no extraneous copying of data points will occur. 
+
 #Design Decisions
 
 Given the size of the datasets, a sample of 5,000 pickup points were randomly selected for data visualization. We have no reason to assume that the sample isn't representative of the rest of the data. Data from April to September 2014 are processed in R to produce a conglomerate dataset of pickup and dropoff points (dataset size too big to be included, a sample example_final_dataset.csv is included). A smaller dataset of 5000 points was generated (dataset included as final_dataset.csv) and converted to GeoJSON (dataa.geojon) via an online csv-to-geojson converter such as Ogre. 
