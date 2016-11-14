@@ -5,6 +5,7 @@ var all_overlays = []; //list of drawn polygons
 var locations = []; //list of locations to be displayed
 var selectedPolygon; 
 var stateOfHeatMap = true; //whether heat map is toggled on or off
+var newShape;
 
 //function to update heat map and clustering
 function updateHeatCluster(listOfLocations) {
@@ -197,23 +198,29 @@ function initMap() {
     google.maps.event.addListener(polygon, 'click', function() {
       select(polygon);
     });
-    
-    //adjust for filtering when polygon is editted
+
+    oldPolygon = selectedPolygon;
+
     google.maps.event.addListener(selectedPolygon.getPath(), 'set_at', function() {
+      console.log(all_overlays.length);
       all_overlays.splice(all_overlays.indexOf(oldPolygon),1);
+      console.log(all_overlays.length);
       all_overlays.push(selectedPolygon);
+      console.log(all_overlays.length);
       updateFilter();
     });
 
     google.maps.event.addListener(selectedPolygon.getPath(), 'insert_at', function() {
+      console.log(all_overlays.length);
       all_overlays.splice(all_overlays.indexOf(oldPolygon),1);
+      console.log(all_overlays.length);
       all_overlays.push(selectedPolygon);
+      console.log(all_overlays.length);
       updateFilter();
     });
 
     updateFilter();
   });
-
 };
 
 //callback function called from script importing geojson within initMap
