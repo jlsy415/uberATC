@@ -14,7 +14,7 @@ Google Maps was the web API of choice. Though Leaflet.js also has well-developed
 Google Maps drawing manager was used to allow for drawing of multiple polygons on the map. Google Maps Marker Clusterer was used to cluster the 5,000 points. Drawn polygons filter the marker cluster display to just points within the polygon.
 
 #Next Steps
-Given more time, a map container not taking up the whole page would be used, and a display panel would be used to display useful statistical information about the points. 
+Given more time, a map container not taking up the whole page would be used, and a display panel would be used to display useful statistical information about the points. In addition, the map would be able to have custom controls for filtering data points by pickup and dropof, month, time of day, etc through extracting these properties from geojson. 
 
 A bigger overhaul of the app would be to represent pairs of points as an line geometry in geojson, and having lines in geojson can allow for features such as most popular route, filtering routes by drawn shape, etc. To consider for the fact that cars have to abide by roads and that paths are rarely directly heading towards each other, the Google Maps Directions API, specifically the Waypoints, would have to be used to derive the distance and path of the car ride.
 
