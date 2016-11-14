@@ -168,7 +168,7 @@ function initMap() {
 
   // import geojson data through script and callbacks
   var script = document.createElement('script');
-  script.src = './data/dataa.geojson';
+  script.src = 'dataa.geojson';
   document.getElementsByTagName('head')[0].appendChild(script);
 
   //center map button to new york
