@@ -46,15 +46,15 @@ function updateHeatCluster(listOfLocations) {
 
 //update map to filtered data within drawn shape
 function updateFilter() {
-  editableLocations = locations;
+  editableLocations = locations.slice(0); //defensive copying
   var tempLocations = [];
   if (all_overlays.length == 0) { //when there are no drawn polygons
-    tempLocations = editableLocations;
+    tempLocations = locations;
   } else { //creates new list of locations to updateHeatCluster
     for (var i = 0; i < all_overlays.length; i++) {
       for (var j = 0; j < editableLocations.length; j++) {
         var curPosition = new google.maps.LatLng(editableLocations[j].lat, editableLocations[j].lng);
-        if (google.maps.geometry.poly.containsLocation(curPosition, all_overlays[i])) {
+        if (google.maps.geometry.poly.containsLocation(curPosition, all_overlays[i]) || google.maps.geometry.poly.isLocationOnEdge(curPosition, all_overlays[i])) {
           tempLocations.push(editableLocations[j]);
           editableLocations.splice(j,1);
         }
