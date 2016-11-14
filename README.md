@@ -1,7 +1,7 @@
 # UberATC
 Visit https://andytsai08.github.io/uberATC/ for the app.
 
-![](https://github.com/andytsai08/uberATC/blob/master/demo.gif)
+![](https://github.com/andytsai08/uberATC/blob/master/uberATC_demo.gif)
 
 Data Visualization for Uber pickup location data for UberATC. Use the drawing manager on the top center of the page to draw arbitrary shapes on the map, and marker clusters and the heatmap will be filtered accordingly. Drawn polygons can be deleted, and the heat map can be toggled, using the control buttons at the top of the page. 
 
