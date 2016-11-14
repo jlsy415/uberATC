@@ -197,6 +197,19 @@ function initMap() {
     google.maps.event.addListener(polygon, 'click', function() {
       select(polygon);
     });
+    
+    //adjust for filtering when polygon is editted
+    google.maps.event.addListener(selectedPolygon.getPath(), 'set_at', function() {
+      all_overlays.splice(all_overlays.indexOf(oldPolygon),1);
+      all_overlays.push(selectedPolygon);
+      updateFilter();
+    });
+
+    google.maps.event.addListener(selectedPolygon.getPath(), 'insert_at', function() {
+      all_overlays.splice(all_overlays.indexOf(oldPolygon),1);
+      all_overlays.push(selectedPolygon);
+      updateFilter();
+    });
 
     updateFilter();
   });
